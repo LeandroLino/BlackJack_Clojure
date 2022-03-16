@@ -1,14 +1,16 @@
-(ns black-jack.core)
+(ns black-jack.core
+  (:require [card-ascii-art.core :as card]))
 
 (defn new-card []
   "Generates a card number between 1 and 13"
   (inc (rand-int 13)))
 
 (defn player [player-name]
-  (def card-1 (new-card))
-  (def card-2 (new-card))
-  {:player player-name
-   :cards [card-1 card-2]})
+  (let [card1 (new-card)
+        card2 (new-card)
+        cards [card1 card2]]
+    {:player-name player-name
+     :cards cards}))
 
-(defn -main []
-  "Defn main")
+(card/print-player (player "Lino"))
+(card/print-player (player "Dealer"))
