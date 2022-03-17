@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojars.cesaralcancio/card-ascii-art "0.4.0"]]
   :repl-options {:init-ns black-jack.core}
-  :main black-jack.game)
+  :main black-jack.game/)
